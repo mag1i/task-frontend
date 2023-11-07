@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <!-- Trust preinstalled CAs -->
+            <certificates src="system" />
+            <!-- Additionally trust user added CAs -->
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Pin your app's certificate -->
+    <domain-config>
+        <domain includeSubdomains="true">10.10.61.58</domain>
+        <pin-set>
+            <pin digest="SHA-256">/3MJSJnwookeCMVRQ4yR3xAYMmDvxXlUUT7t9yVyzqI=</pin>
+        </pin-set>
+    </domain-config>
+
+</network-security-config>
